@@ -172,9 +172,9 @@
         
         default:
             // gesture is currently panning, match keyboard y to touch y
-            if (location.y > self.keyboardView.frame.origin.y || self.keyboardView.frame.origin.y != self.previousKeyboardY) {
+            if(location.y > self.keyboardView.frame.origin.y - 40 || self.keyboardView.frame.origin.y != self.previousKeyboardY) {
                 
-                CGFloat newKeyboardY = self.previousKeyboardY + (location.y - self.previousKeyboardY);
+                CGFloat newKeyboardY = self.previousKeyboardY + (location.y + 40 - self.previousKeyboardY);
                 newKeyboardY = newKeyboardY < self.previousKeyboardY ? self.previousKeyboardY : newKeyboardY;
                 newKeyboardY = newKeyboardY > screenHeight ? screenHeight : newKeyboardY;
                 
